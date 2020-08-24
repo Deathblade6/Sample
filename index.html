@@ -1,18 +1,15 @@
-<html>
+
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
-
-  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 </head>
-
 <body>
-  <video class="video-js" data-setup='{}'>
-    <source src="rtmp://ec2-15-207-113-48.ap-south-1.compute.amazonaws.com/live&/test" type="rtmp/mp4">
-      <!-- <source src="https://vjs.zencdn.net/v/oceans.webm" type="video/webm"> -->
-  </video>
+  <div>
+      <video data-dashjs-player autoplay src="http://ec2-15-207-113-48.ap-south-1.compute.amazonaws.com:8080/dash/live/index.mpd" controls>
+      </video>
+  </div>
+<script src="http://cdn.dashjs.org/v3.1.0/dash.all.min.js"></script>
 
-  <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/videojs-flash@2/dist/videojs-flash.min.js"></script>
 </body>
 </html>
