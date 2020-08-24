@@ -3,13 +3,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+
 </head>
 <body>
-  <div>
-      <video data-dashjs-player autoplay src="http://ec2-15-207-113-48.ap-south-1.compute.amazonaws.com:8080/dash/live/index.mpd" controls>
-      </video>
-  </div>
-<script src="http://cdn.dashjs.org/v3.1.0/dash.all.min.js"></script>
+  <video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="640"
+    height="264"
+    data-setup="{}"
+  >
+    <source src="https://stream.trebuchet.one/hls/stream.m3u8" type="application/x-mpegURL" res="99999" label="auto" />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
+
 
 </body>
 </html>
