@@ -1,83 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<meta charset=utf-8 />
+<title>Welcome to nginx!</title>
+<link href="video-js.css" rel="stylesheet">
+<script src="video.js"></script>
+<script src="videojs-contrib-hls.min.js"></script>
+<script src="videojs-resolution-switcher.js"></script>
+<link href="videojs-resolution-switcher.css" rel="stylesheet">
 
-  gtag('config', 'UA-160598460-2');
-</script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
 
-    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-
-<link href="/videojs-resolution-switcher.css" rel="stylesheet">
-<script src="/videojs-resolution-switcher.js"></script>
-    <style>
-        .space-20{
-            width: 100%;
-            height: 20px;
-        }
-        .space-50{
-            width: 100%;
-            height: 50px;
-        }
-        .bg-now{
-            background-color: #38a0f1;
-        }
-
-    </style>
 </head>
+<body>
+<h1></h1>
+
+
 <body>
 
 
-    <div class="nav bg-now">
-        <div class="space-50 text-left p-2 text-white h5 font-weight-bold">
-            Trebuchet
-        </div>
-    </div>
 
-    <div class="container">
-        <div class="space-50"></div>
-        <div class="space-50"></div>
+<video poster="logo.png" id=video class="video-js vjs-default-skin" controls preload="auto" width="640" height="268" data-setup='{}'>
 
-        <div class="row">
-            <div class="col col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="alert alert-success">
-                         Live streaming now
-                        </div>
-                    </div>
-                </div>
-            </div>
-http://ec2-13-235-70-74.ap-south-1.compute.amazonaws.com:8080/hls/test_src.m3u8
-            <div class="space-20"></div>
-            <div class="col col-12">
-                <div class="card">
-                    <div class="card-body d-flex justify-content-center">
-                      <video poster="/" id="video" class="video-js vjs-default-skin" controls autoplay preload="auto" width="640" height="360" data-setup='{}'/>
+  <!-- <source src="http://ec2-13-235-70-74.ap-south-1.compute.amazonaws.com/hls/test.m3u8" type="application/x-mpegURL"> -->
 
-                      <source src="http://ec2-13-235-70-74.ap-south-1.compute.amazonaws.com/hls/test_low.m3u8" type="application/x-mpegURL" label="low" res="360" />
+  <source src="http://ec2-13-235-70-74.ap-south-1.compute.amazonaws.com/hls/test_low.m3u8" type="application/x-mpegURL" label="low" res="360" />
 
-                      <source src="http://ec2-13-235-70-74.ap-south-1.compute.amazonaws.com/hls/test_mid.m3u8" type="application/x-mpegURL" label="mid" res="480" />
+  <source src="http://ec2-13-235-70-74.ap-south-1.compute.amazonaws.com/hls/test_mid.m3u8" type="application/x-mpegURL" label="mid" res="480" />
 
-                      <source src="http://ec2-13-235-70-74.ap-south-1.compute.amazonaws.com/hls/test_high.m3u8" type="application/x-mpegURL" label="high" res="720"/ >
+  <source src="http://ec2-13-235-70-74.ap-south-1.compute.amazonaws.com/hls/test_high.m3u8" type="application/x-mpegURL" label="high" res="720"/ >
 
-                      <source src="http://ec2-13-235-70-74.ap-south-1.compute.amazonaws.com/hls/test_src.m3u8" type="application/x-mpegURL" label="SRC" res="1080"/ >
+  <source src="http://ec2-13-235-70-74.ap-south-1.compute.amazonaws.com/hls/test_src.m3u8" type="application/x-mpegURL" label="src" res="1080"/ >
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+       <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that
+<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+       </video>
+       <script>
+        videojs('video').videoJsResolutionSwitcher()
+       </script>
 
 
-
-  <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
 </body>
 </html>
